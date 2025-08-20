@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive Layout with Flexbox & Grid</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="header">
+    <h1>Modern Web Layout</h1>
+    <nav class="nav">
+      <ul class="nav-list">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content with Sidebar -->
+  <main class="main">
+    <!-- Grid Layout: Content + Sidebar -->
+    <div class="content-grid">
+      <!-- Main Content Area -->
+      <section class="content">
+        <h2>Welcome to Our Site</h2>
+        <p>This is a responsive webpage built with Flexbox and CSS Grid. The layout adapts to desktop, tablet, and mobile screens.</p>
+
+        <!-- Flexbox Layout: Feature Cards -->
+        <div class="card-container">
+          <div class="card">
+            <h3>Flexbox</h3>
+            <p>Perfect for 1D layouts like navigation, headers, and card rows.</p>
+          </div>
+          <div class="card">
+            <h3>Grid</h3>
+            <p>Ideal for 2D layouts, such as page structures and complex grids.</p>
+          </div>
+          <div class="card">
+            <h3>Responsive</h3>
+            <p>Adapts seamlessly across all device sizes using media queries.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#news">Latest News</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#support">Support</a></li>
+        </ul>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Responsive Layout Demo. All rights reserved.</p>
+  </footer>
+</body>
+</html>

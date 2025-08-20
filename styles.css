@@ -1,0 +1,234 @@
+/* 
+  Reset default margins and box-sizing
+  Ensures consistent layout across browsers
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 
+  Base styles with relative units (rem, %, vw)
+*/
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+/* 
+  HEADER: Uses FLEXBOX for navigation alignment
+*/
+.header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.header h1 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 2rem;
+  flex-wrap: wrap; /* Allows wrapping on small screens */
+}
+
+.nav-list a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.nav-list a:hover {
+  background-color: #34495e;
+}
+
+/* 
+  MAIN LAYOUT: Uses CSS GRID for 2D structure (content + sidebar)
+*/
+.main {
+  padding: 2rem 5%;
+  min-height: 70vh;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 3fr 1fr; /* 75% content, 25% sidebar */
+  gap: 2rem;
+}
+
+.content {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.content h2 {
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.content p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+/* 
+  CARD CONTAINER: Uses FLEXBOX for horizontal layout
+*/
+.card-container {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap; /* Cards stack on small screens */
+  margin-top: 1.5rem;
+}
+
+.card {
+  flex: 1 1 250px; /* Grow, shrink, min-width */
+  background: #ecf0f1;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  color: #2980b9;
+  margin-bottom: 0.5rem;
+}
+
+/* 
+  SIDEBAR
+*/
+.sidebar {
+  background: #34495e;
+  color: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  align-self: start; /* Keeps sidebar at top in grid */
+}
+
+.sidebar h3 {
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  border-bottom: 2px solid #2c3e50;
+  padding-bottom: 0.5rem;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li {
+  margin-bottom: 0.8rem;
+}
+
+.sidebar a {
+  color: #bdc3c7;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.sidebar a:hover {
+  color: white;
+}
+
+/* 
+  FOOTER: Simple flex layout
+*/
+.footer {
+  background-color: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+}
+
+/* 
+  RESPONSIVE DESIGN: Media Queries for Mobile, Tablet, Desktop
+*/
+
+/* Mobile: Up to 768px */
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 1.5rem;
+  }
+
+  .nav-list {
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-list a {
+    font-size: 1rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .content-grid {
+    grid-template-columns: 1fr; /* Stack content and sidebar */
+    gap: 1.5rem;
+  }
+
+  .card-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .card {
+    flex: none;
+  }
+}
+
+/* Tablet: 769px to 1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .content-grid {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .card-container {
+    gap: 1rem;
+  }
+
+  .card {
+    flex: 1 1 200px;
+  }
+}
+
+/* Desktop: 1025px and above */
+@media (min-width: 1025px) {
+  .card-container {
+    gap: 2rem;
+  }
+
+  .card {
+    flex: 1 1 250px;
+  }
+}
+
+/* 
+  Optional: Use viewport units for scalable typography
+*/
+@media (min-width: 768px) {
+  body {
+    font-size: clamp(1rem, 2.5vw, 1.2rem); /* Responsive font */
+  }
+}
